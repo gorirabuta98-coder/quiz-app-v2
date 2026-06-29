@@ -9,17 +9,17 @@ export default function UploadPage() {
 
       <div className="grid grid-cols-1 gap-4">
 
-        {/* 画像から作成 */}
-        <Link href="/upload/image">
+        {/* テキスト + AI誤答生成 */}
+        <Link href="/upload/text">
           <div className="p-5 border rounded-xl shadow-sm hover:bg-gray-50 cursor-pointer transition">
-            <h2 className="text-xl font-semibold mb-1">画像から作成</h2>
+            <h2 className="text-xl font-semibold mb-1">テキスト入力でAI誤答生成</h2>
             <p className="text-gray-600 text-sm">
-              画像をアップロードしてAIが自動でクイズを生成します
+              問題文と正解を入力するとAIが誤答を3つ生成し、4択問題を保存します
             </p>
           </div>
         </Link>
 
-        {/* テキストで作成 */}
+        {/* 手入力クイズ作成 */}
         <Link href="/upload/manual">
           <div className="p-5 border rounded-xl shadow-sm hover:bg-gray-50 cursor-pointer transition">
             <h2 className="text-xl font-semibold mb-1">テキストで作成</h2>
