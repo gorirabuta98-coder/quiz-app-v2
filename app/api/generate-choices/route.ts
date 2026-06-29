@@ -41,7 +41,10 @@ export async function POST(req: Request) {
       { text: prompt },
     ]);
 
-    const raw = result.response.text();
+    let raw = result.response.text();
+
+    // 余計な記号を除去
+    raw = raw.replace(/```json/g, "").replace(/```/g, "").trim();
 
     let json;
     try {
@@ -58,3 +61,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
+
